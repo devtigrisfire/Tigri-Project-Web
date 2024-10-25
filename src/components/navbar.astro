@@ -1,0 +1,178 @@
+---
+import { Image } from "astro:assets";
+import favicon from "../assets/favicon.png";
+---
+
+<nav class="bg-white border-gray-20 z-50">
+  <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <Image
+        src={favicon}
+        alt="Tigris Logo"
+        width={90}
+        height={90}
+        class="h-20 w-20"
+        loading="lazy" 
+      />
+    </a>
+    <div class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+      <a
+        href="https://app.tigrisfire.com/form-penawaran-tigrisfire/"
+        class="text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-offset-2">
+        Buat Penawaran
+      </a>
+
+      <!-- Hamburger Menu Button for Mobile -->
+      <button
+        id="menu-toggle"
+        type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="mega-menu"
+        aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14">
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="mega-menu" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+      <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
+        <li>
+          <a href="/" class="block text-black py-2 px-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0" aria-current="page">Beranda</a>
+        </li>
+        <li class="relative group">
+          <div id="dropdownTentangKamiButton" class="dropdown-trigger flex items-center justify-between w-full py-2 px-3 text-black border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0">
+            Tentang
+            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path>
+            </svg>
+          </div>
+
+          <!-- Dropdown menu -->
+          <div id="dropdownTentangKami" class="dropdown-menu z-50 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+            <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownTentangKamiButton">
+              <li><a href="/tentangkami" class="block px-4 py-2 hover:bg-gray-100">Tentang Kami</a></li>
+              <li><a href="/posts" class="block px-4 py-2 hover:bg-gray-100">Blog</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Layanan Dropdown -->
+        <li class="relative group">
+          <div id="dropdownLayananButton" class="dropdown-trigger flex items-center justify-between w-full py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0">
+            Layanan
+            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path>
+            </svg>
+          </div>
+
+          <!-- Dropdown menu -->
+          <div id="dropdownLayanan" class="dropdown-menu z-50 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+            <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLayananButton">
+              <li><a href="/layanankami" class="block px-4 py-2 hover:bg-gray-100">Layanan Kami</a></li>
+              <li><a href="/maintenance" class="block px-4 py-2 hover:bg-gray-100">Maintenance</a></li>
+              <li><a href="/inspeksiapargratis" class="block px-4 py-2 hover:bg-gray-100">Inspeksi APAR Gratis</a></li>
+              <li><a href="/refil" class="block px-4 py-2 hover:bg-gray-100">On-site Refill</a></li>
+              <li><a href="/firetraining" class="block px-4 py-2 hover:bg-gray-100">Fire Training</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Produk Dropdown -->
+        <li class="relative group">
+          <div id="dropdownProdukButton" class="dropdown-trigger flex items-center justify-between w-full py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0">
+            Produk
+            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path>
+            </svg>
+          </div>
+
+          <!-- Dropdown menu -->
+          <div id="dropdownProduk" class="dropdown-menu z-50 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+            <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownProdukButton">
+              <li><a href="/produkkami" class="block px-4 py-2 hover:bg-gray-100">Produk Kami</a></li>
+              <li class="relative">
+                <a href="/robotfire" class="block px-4 py-2 hover:bg-gray-100">Robot Firefighting</a>
+                <span class="absolute top-0 right-0 mt-1 mr-2 bg-blue-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+              </li>
+              <li class="relative">
+                <a href="/cctv" class="block px-4 py-2 hover:bg-gray-100">Camera Fire Detection AI</a>
+                <span class="absolute top-0 right-0 mt-1 mr-2 bg-blue-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+              </li>
+              <li><a href="/produk/firealarm" class="block px-4 py-2 hover:bg-gray-100">Fire Alarm</a></li>
+              <li><a href="/produk/firepump" class="block px-4 py-2 hover:bg-gray-100">Fire Pump</a></li>
+              <li><a href="/produk/apar" class="block px-4 py-2 hover:bg-gray-100">Alat Pemadam Api</a></li>
+              <li><a href="/produk/firesystems" class="block px-4 py-2 hover:bg-gray-100">Fire Systems</a></li>
+              <li><a href="/produk/firesprinkler" class="block px-4 py-2 hover:bg-gray-100">Fire Sprinkler</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li><a href="/portofolio" class="block py-2 px-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 text-black">Portofolio</a></li>
+        <li><a href="/kontak" class="block py-2 px-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 text-black">Hubungi Kami</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Helper function to add multiple event listeners with TypeScript type support
+    function addEventListenerMulti(
+      element: HTMLElement, 
+      events: string, 
+      handler: (event: Event) => void
+    ) {
+      events.split(' ').forEach(event => {
+        element.addEventListener(event, handler);
+      });
+    }
+  
+    // Menu toggle for mobile version
+    const menuToggle = document.getElementById("menu-toggle") as HTMLElement;
+    const megaMenu = document.getElementById("mega-menu") as HTMLElement;
+  
+    if (menuToggle && megaMenu) {
+      addEventListenerMulti(menuToggle, "click touchstart", function (e: Event) {
+        e.preventDefault(); // Prevent default action for touch events
+        megaMenu.classList.toggle("hidden");
+      });
+    }
+  
+    // Handle dropdowns for desktop and mobile
+    const dropdowns = document.querySelectorAll('.group');
+  
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector('.dropdown-trigger') as HTMLElement;
+      const menu = dropdown.querySelector('.dropdown-menu') as HTMLElement;
+  
+      if (button && menu) {
+        addEventListenerMulti(button, "click touchstart", function (e: Event) {
+          e.preventDefault();
+          
+          // Close other dropdowns
+          dropdowns.forEach(otherDropdown => {
+            const otherMenu = otherDropdown.querySelector('.dropdown-menu') as HTMLElement;
+            if (otherMenu && otherMenu !== menu) {
+              otherMenu.classList.add('hidden');
+            }
+          });
+  
+          // Toggle the current dropdown
+          menu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+  
+</nav>

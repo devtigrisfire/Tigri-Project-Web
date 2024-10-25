@@ -1,0 +1,29 @@
+  <!-- Tombol Beli -->
+  <a href="https://wa.me/6281382529368?text=" class="whatsapp-button inline-flex items-center px-8 py-3 text-lg font-semibold text-white  bg-gradient-to-r from-blue-800 to-blue-600 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 transition-all duration-300 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Pesan Produk Ini</a>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          // Ambil elemen <h2> yang berisi nama produk (menggunakan kelas .product-title)
+          var productTitleElement = document.querySelector('.product-title')as HTMLHeadingElement;;
+  
+          // Pastikan elemen productTitleElement tidak null sebelum mengakses innerText
+         var productTitle = productTitleElement ? productTitleElement.innerText : "Produk";
+  
+          // Tangkap URL halaman saat ini
+          var pageURL = window.location.href;
+  
+          // Teks pesan dinamis yang diinginkan
+          var message = "Hallo Tigrisfire, Saya Mau Pesan Produk " + productTitle + " di " + pageURL;
+  
+          // Dapatkan elemen tombol WhatsApp, dengan memastikan bahwa elemen yang diambil adalah anchor
+          var whatsappButton = document.querySelector('.whatsapp-button') as HTMLAnchorElement;
+  
+          // Pastikan whatsappButton bukan null sebelum mengakses href
+          if (whatsappButton) {
+              // Tambahkan pesan dinamis ke URL WhatsApp (judul bersih, URL diencode)
+              whatsappButton.href += encodeURIComponent(message);
+          } else {
+              console.error("WhatsApp button not found!");
+          }
+      });
+  </script>
