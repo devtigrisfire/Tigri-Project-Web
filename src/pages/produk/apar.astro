@@ -5,17 +5,26 @@ import { Image } from "astro:assets";
 import Kategoriapar from "../../components/kategoriapar.astro";
 
 const {
-  titlemeta = "Hubungi Kami",
-  descriptionmeta = "AMANKAN ASSET BERHARGAMU DI MASA DEPAN DENGAN KAMI AHLINYA",
+  imagemeta = "/favicon.png", // Set default image jika tidak ada gambar
+
   pagetitle = "APAR-Alat Pemadam Api Ringan",
 } = Astro.props;
+const titlemeta =
+  "APAR Terbaik untuk Proteksi Kebakaran | Refill & Perawatan - Tigrisfire";
+const descriptionmeta =
+  "Tigrisfire menyediakan APAR berkualitas untuk proteksi kebakaran. Layanan lengkap mulai dari refill, perawatan, hingga pemasangan alat pemadam. Hubungi kami untuk keamanan properti Anda!";
+const keywordsmeta =
+  "APAR, alat pemadam kebakaran ringan, refill APAR, perawatan APAR, pemasangan APAR, Tigrisfire Indonesia, proteksi kebakaran, alat pemadam api berkualitas, fire extinguisher";
 
 import foamApar from "../../assets/foam-apar.webp";
 import powderApar from "../../assets/powder-apar.webp";
 import co2Apar from "../../assets/co2-apar.webp";
 ---
 
-<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta}>
+<BaseLayout
+  titlemeta={titlemeta}
+  descriptionmeta={descriptionmeta}
+  keywordsmeta={keywordsmeta}>
   <Heropagetitle pagetitle={pagetitle} />
   <Kategoriapar />
 

@@ -5,16 +5,22 @@ import Heropagetitle from "../../components/heropagetitle.astro";
 
 // Title dan description untuk meta
 
-const {
-  titlemeta = "Our Fire Pump",
-  descriptionmeta = "Produk Berkulitas Fire Pump Kami",
-  pagetitle = "Our Fire Pump",
-} = Astro.props;
+const pagetitle = "Our Fire Pump";
+
+const titlemeta =
+  "Fire Pump System Terbaik di Indonesia | Pompa Kebakaran Efisien - Tigrisfire";
+const descriptionmeta =
+  "Tigrisfire menyediakan fire pump system berkualitas tinggi untuk proteksi kebakaran optimal. Pompa kebakaran efisien dan andal untuk memastikan keselamatan properti Anda. Hubungi kami untuk solusi lengkap!";
+const keywordsmeta =
+  "fire pump system, pompa kebakaran, Tigrisfire Indonesia, fire pump berkualitas, sistem proteksi kebakaran, pemasangan fire pump, pompa pemadam kebakaran, keamanan kebakaran, solusi fire pump";
 ---
 
-<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta}>
+<BaseLayout
+  titlemeta={titlemeta}
+  descriptionmeta={descriptionmeta}
+  keywordsmeta={keywordsmeta}>
   <Heropagetitle pagetitle={pagetitle} />
-  
+
   <!-- Main Content -->
   <main class="py-16" id="products">
     <div class="container mx-auto">
@@ -90,8 +96,6 @@ const {
       </section>
     </div>
   </main>
-
- 
 
   <Klikporto />
 </BaseLayout>

@@ -27,14 +27,19 @@ const products = entries.items.map((item) => {
   };
 });
 
-const {
-  titlemeta = "ROBOT FIREFIGHTING",
-  descriptionmeta = "robot fire fighting",
-  pagetitle = "ROBOT FIREFIGHTING",
-} = Astro.props;
+const { pagetitle = "ROBOT FIREFIGHTING" } = Astro.props;
+const titlemeta =
+  "Robot Pemadam Kebakaran Otomatis | Solusi Pemadam Canggih - Tigrisfire";
+const descriptionmeta =
+  "Tigrisfire menghadirkan robot pemadam kebakaran otomatis yang efektif dan efisien. Didesain untuk merespons kebakaran dengan cepat dan aman, solusi ideal untuk area industri dan komersial. Hubungi kami untuk info lebih lanjut!";
+const keywordsmeta =
+  "robot pemadam kebakaran, robot fire extinguisher, pemadam kebakaran otomatis, fire suppression robot, teknologi pemadam kebakaran, robot Tigrisfire, solusi pemadam kebakaran industri";
 ---
 
-<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta}>
+<BaseLayout
+  titlemeta={titlemeta}
+  descriptionmeta={descriptionmeta}
+  keywordsmeta={keywordsmeta}>
   <Heropagetitle pagetitle={pagetitle} />
 
   <div class="container mx-auto pt-20 md:py-12 px-4 sm:px-6 lg:px-8">

@@ -37,8 +37,7 @@ const galleryImages = Array.isArray(produkcctv.image)
   : [produkcctv.image];
 
 // Ambil URL untuk gambar utama dan imagespek
-const mainImageUrl =
-  galleryImages[0]?.fields?.file?.url || "/logo rumahapi.webp"; // Gambar utama
+const mainImageUrl = galleryImages[0]?.fields?.file?.url || "/favicon.png"; // Gambar utama
 const imagespekUrl =
   produkcctv.imagespek &&
   "fields" in produkcctv.imagespek &&
@@ -49,6 +48,17 @@ const imagespekUrl =
 // Debugging: Tampilkan URL gambar imagespek di console
 console.log("Main Image URL:", mainImageUrl);
 console.log("Imagespek URL:", imagespekUrl);
+
+
+console.log("Meta Title:", produkcctv.metatitle || produkcctv.title);
+console.log("Meta Description:", produkcctv.metadeskripsi);
+console.log("Meta Keywords:", produkcctv.metakeywords);
+
+//meta Optimasi
+const titlemeta = produkcctv.metatitle || produkcctv.title; // Gunakan title produk jika metatitle kosong
+const descriptionmeta =
+  produkcctv.metadeskripsi;
+const keywordsmeta = produkcctv.metakeywords;
 
 // Konversi spesifikasi dari markdown ke HTML
 const contentHtml = marked(produkcctv.spesifikasi.toString());
@@ -67,7 +77,11 @@ import CTAwaterjet from "../../assets/lokasiumum/CTA waterjet.webp";
 import SystemoverviewCCTVFirewater from "../../assets/lokasiumum/systemoverview cctvfirerwater.webp";
 ---
 
-<BaseLayout>
+<BaseLayout
+  titlemeta={titlemeta}
+  descriptionmeta={descriptionmeta}
+  keywordsmeta={keywordsmeta}
+  imagemeta={mainImageUrl}>
   <!-- Container utama -->
   <div class="bg-gray-100 py-12">
     <div class="container mx-auto px-4 md:px-8">
@@ -277,8 +291,11 @@ import SystemoverviewCCTVFirewater from "../../assets/lokasiumum/systemoverview 
         </h2>
       </div>
       <div class="relative mx-auto mt-10 max-w-4xl">
-
-        <Image src={SystemoverviewCCTVFirewater} alt="Systemoverview CCTV Firewater" class="w-full rounded-2xl border border-gray-100 shadow" />
+        <Image
+          src={SystemoverviewCCTVFirewater}
+          alt="Systemoverview CCTV Firewater"
+          class="w-full rounded-2xl border border-gray-100 shadow"
+        />
       </div>
       <p class="text-lg text-gray-800 font-bold mt-2 text-center">
         image/System Overview

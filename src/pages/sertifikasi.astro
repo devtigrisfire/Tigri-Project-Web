@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Heropagetitle from "../components/heropagetitle.astro";
+
+const { pagetitle = "Sertifikasi",pagesubtitle="Maantap" } = Astro.props;
+const titlemeta =
+  "Sertifikasi Tigrisfire | Layanan Proteksi Kebakaran Terpercaya di Indonesia";
+const descriptionmeta =
+  "Perusahaan kami telah meraih berbagai sertifikasi untuk menjamin kualitas, keamanan, dan layanan terbaik bagi pelanggan. .";
+const keywordsmeta =
+  "sertifikasi perusahaan, manajemen mutu, keamanan, kualitas, Nama Perusahaan, sertifikasi ISO, sertifikasi industri, layanan terbaik, profesional";
+---
+
+<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta} keywordsmeta={keywordsmeta}>
+  <Heropagetitle pagetitle={pagetitle} {pagesubtitle} />
+
+
+</BaseLayout>

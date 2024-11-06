@@ -39,7 +39,13 @@ const galleryImages = Array.isArray(producttigris.image)
 const contentHtml = marked(producttigris.spesifikasi.toString()); // Konversi Markdown ke HTML
 
 const mainImageUrl =
-  galleryImages[0]?.fields?.file?.url || "/logo rumahapi.webp"; // Gambar utama
+  galleryImages[0]?.fields?.file?.url || "/favicon.png"; // Gambar utama
+
+
+// Ambil data SEO dari produk
+const titlemeta = producttigris.metatitle || producttigris.title;
+const descriptionmeta = producttigris.metadeskripsi || "Detail produk Tigris.";
+const keywordsmeta = producttigris.metakeywords || "produk tigris, pump, fitur";
 
 import energyEfficiencyImg from "../../assets/fiturpumptigris/Energy Efficiency.png";
 import highPerformanceImg from "../../assets/fiturpumptigris/High Performance and Durability.png";
@@ -50,9 +56,13 @@ import guaranteedQualityImg from "../../assets/fiturpumptigris/Guaranteed Qualit
 import seemoreproducttigris from "../../assets/fiturpumptigris/seeproducttigriscta.webp";
 
 
+
 ---
 
-<BaseLayout>
+<BaseLayout titlemeta={titlemeta}
+descriptionmeta={descriptionmeta}
+keywordsmeta={keywordsmeta}
+imagemeta={mainImageUrl}>
   <!-- Container utama -->
   <div class="bg-gray-100 py-12">
     <div class="container mx-auto px-4 md:px-8">

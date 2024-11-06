@@ -1,21 +1,27 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Heropagetitle from "../../components/heropagetitle.astro";import { Image } from "astro:assets";
+import Heropagetitle from "../../components/heropagetitle.astro";
+import { Image } from "astro:assets";
 // Title dan description untuk meta
 
-const {
-  titlemeta = "Fire Alarm",
-  descriptionmeta = "Produk Berkulitas",
-  pagetitle = "Fire Alarm",
-} = Astro.props;
+const { pagetitle = "Fire Alarm" } = Astro.props;
+
+const titlemeta =
+  "Fire Alarm System Terpercaya di Indonesia | Sistem Deteksi Kebakaran - Tigrisfire";
+const descriptionmeta =
+  "Tigrisfire menyediakan fire alarm system untuk mendeteksi kebakaran dengan cepat dan andal. Lindungi properti Anda dengan sistem deteksi kebakaran otomatis. Hubungi kami untuk solusi keamanan terbaik!";
+const keywordsmeta =
+  "fire alarm system, sistem alarm kebakaran, deteksi kebakaran otomatis, Tigrisfire Indonesia, pemasangan fire alarm, sistem proteksi kebakaran, alarm kebakaran, solusi keamanan kebakaran";
 
 import TipeKonvensional from "../../assets/Tipe Konvensional.webp";
 import TipeAddressable from "../../assets/Tipe Addressable.webp";
 ---
 
-<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta}>
+<BaseLayout
+  titlemeta={titlemeta}
+  descriptionmeta={descriptionmeta}
+  keywordsmeta={keywordsmeta}>
   <Heropagetitle pagetitle={pagetitle} />
- 
 
   <main class="container mx-auto py-10">
     <h1 class="text-3xl font-bold text-center mb-6 text-gray-700">
@@ -58,9 +64,7 @@ import TipeAddressable from "../../assets/Tipe Addressable.webp";
       <!-- Emergency Buttons -->
       <div
         class="bg-white rounded-lg shadow-lg p-8 hover:drop-shadow-[0_10px_15px_rgba(249,115,22,0.4)] transition-shadow">
-        <h2 class="text-xl font-bold text-blue-600 mb-4">
-          Emergency Buttons
-        </h2>
+        <h2 class="text-xl font-bold text-blue-600 mb-4">Emergency Buttons</h2>
         <p class="text-gray-600">
           Easy-to-use devices for manual activation of the fire alarm system.
         </p>
@@ -69,9 +73,7 @@ import TipeAddressable from "../../assets/Tipe Addressable.webp";
       <!-- Alarm Indicators -->
       <div
         class="bg-white rounded-lg shadow-lg p-8 hover:drop-shadow-[0_10px_15px_rgba(249,115,22,0.4)] transition-shadow">
-        <h2 class="text-xl font-bold text-blue-600 mb-4">
-          Alarm Indicators
-        </h2>
+        <h2 class="text-xl font-bold text-blue-600 mb-4">Alarm Indicators</h2>
         <p class="text-gray-600">
           Visual indicators confirming alarm activation and fire events.
         </p>
@@ -92,9 +94,7 @@ import TipeAddressable from "../../assets/Tipe Addressable.webp";
       <!-- System Accessories -->
       <div
         class="bg-white rounded-lg shadow-lg p-8 hover:drop-shadow-[0_10px_15px_rgba(249,115,22,0.4)] transition-shadow">
-        <h2 class="text-xl font-bold text-blue-600 mb-4">
-          System Accessories
-        </h2>
+        <h2 class="text-xl font-bold text-blue-600 mb-4">System Accessories</h2>
         <p class="text-gray-600">
           Complementary products enhancing the overall effectiveness of your
           system.
@@ -224,16 +224,15 @@ import TipeAddressable from "../../assets/Tipe Addressable.webp";
           class="bg-gray-50 bg-opacity-80 shadow-xl rounded-lg p-6 transition-transform transform hover:scale-105 hover:shadow-2xl group">
           <div
             class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Image
+            <Image
               src={TipeKonvensional}
               alt="Konvensional Icon"
               width={40}
               height={40}
               format="webp"
               quality={85}
-          class="w-10 h-10"
+              class="w-10 h-10"
             />
-           
           </div>
           <h3 class="text-2xl font-bold text-gray-900 text-center mb-4">
             Tipe Konvensional
@@ -251,7 +250,6 @@ import TipeAddressable from "../../assets/Tipe Addressable.webp";
           class="bg-gray-50 bg-opacity-80 shadow-xl rounded-lg p-6 transition-transform transform hover:scale-105 hover:shadow-2xl group">
           <div
             class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-           
             <Image
               src={TipeAddressable}
               alt="Addressable Icon"
@@ -259,7 +257,7 @@ import TipeAddressable from "../../assets/Tipe Addressable.webp";
               height={40}
               format="webp"
               quality={85}
-          class="w-10 h-10"
+              class="w-10 h-10"
             />
           </div>
           <h3 class="text-2xl font-bold text-gray-900 text-center mb-4">

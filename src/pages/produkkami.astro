@@ -4,19 +4,24 @@ import Klikporto from "../components/klikporto.astro";
 import Heropagetitle from "../components/heropagetitle.astro";
 
 const {
-  titlemeta = "LLayanan Proteksi Kebakaran Tangguh-Tentang Kami",
-  descriptionmeta = "Perlindungan Terbaik Untuk Masa Depan Aset Berharga Anda",
   pagetitle = " Produk Kami Yang Luarbiasa",
   pagesubtitle = "Kami berkomitmen untuk menjaga keselamatan Anda dengan teknologi mutakhir dan tim ahli yang berdedikasi tinggi",
 } = Astro.props;
-
+const titlemeta =
+  "Produk Proteksi Kebakaran Terbaik | Alat Pemadam & Sistem Keamanan - Tigrisfire";
+const descriptionmeta =
+  "Temukan produk proteksi kebakaran terbaik di Tigrisfire: alat pemadam api, sistem keamanan kebakaran, dan layanan instalasi. Cegah risiko kebakaran, hubungi kami sekarang!";
+const keywordsmeta =
+  "produk proteksi kebakaran, alat pemadam api, sistem keamanan kebakaran, Tigrisfire, fire extinguisher, sistem pemadam kebakaran, perlengkapan proteksi kebakaran, fire suppression system, smoke detector, sprinkler system";
 ---
 
-<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta}>
-  <Heropagetitle pagetitle={pagetitle} pagesubtitle={pagesubtitle}/>
- 
-  
-  <section class=" md:p-52 px-2 py-20">
+<BaseLayout
+  titlemeta={titlemeta}
+  descriptionmeta={descriptionmeta}
+  keywordsmeta={keywordsmeta}>
+  <Heropagetitle pagetitle={pagetitle} pagesubtitle={pagesubtitle} />
+
+  <section class="md:p-52 px-2 py-20">
     <h2 class="text-center text-2xl mb-2 font-bold leading-8">
       Lihat Lebih Dekat Dengan Produk Kami
     </h2>

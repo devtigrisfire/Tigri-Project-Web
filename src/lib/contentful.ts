@@ -9,6 +9,9 @@ export interface BlogPost {
     date: EntryFieldTypes.Date;
     description: EntryFieldTypes.Text;
     slug: EntryFieldTypes.Text;
+    metatitle: EntryFieldTypes.Text;
+    metadeskripsi: EntryFieldTypes.Text;
+    metakeywords: EntryFieldTypes.Text;
     image: {
       sys: {
         id: string;
@@ -27,6 +30,9 @@ export interface Product {
     price: EntryFieldTypes.Number;
     content: EntryFieldTypes.Text;
     spesifikasi: EntryFieldTypes.Text;
+    metatitle: EntryFieldTypes.Text;
+    metadeskripsi: EntryFieldTypes.Text;
+    metakeywords: EntryFieldTypes.Text;
   };
 }
 export interface Produkcctv {
@@ -39,6 +45,9 @@ export interface Produkcctv {
     content: EntryFieldTypes.Text;
     spesifikasi: EntryFieldTypes.Text;
     imagespek?:EntryFieldTypes.AssetLink;
+    metatitle: EntryFieldTypes.Text;
+    metadeskripsi: EntryFieldTypes.Text;
+    metakeywords: EntryFieldTypes.Text;
   };
 }
 
@@ -51,6 +60,9 @@ export interface Producttigris {
     price: EntryFieldTypes.Number;
     content: EntryFieldTypes.Text;
     spesifikasi: EntryFieldTypes.Text;
+    metatitle: EntryFieldTypes.Text;
+    metadeskripsi: EntryFieldTypes.Text;
+    metakeywords: EntryFieldTypes.Text;
   };
 }
 

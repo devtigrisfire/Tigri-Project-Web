@@ -4,10 +4,14 @@ import Heropagetitle from "../../components/heropagetitle.astro";
 import { Image } from "astro:assets";
 
 const {
-  titlemeta = "Fire System- Sistem Canggih dan Terjamin",
-  descriptionmeta = "AMANKAN ASSET BERHARGAMU DI MASA DEPAN DENGAN KAMI AHLINYA",
+  
   pagetitle = "Fire System",
 } = Astro.props;
+
+const titlemeta = "Sistem Proteksi Kebakaran Terintegrasi | Fire Suppression & Alarm - Tigrisfire";
+const descriptionmeta = "Tigrisfire menyediakan fire system terintegrasi: fire suppression, fire alarm, dan sprinkler untuk melindungi properti Anda. Solusi aman dan handal bagi kebutuhan proteksi kebakaran Anda.";
+const keywordsmeta = "fire system, sistem proteksi kebakaran, fire suppression, fire alarm, fire sprinkler, Tigrisfire Indonesia, solusi kebakaran, sistem keamanan kebakaran, proteksi kebakaran industri";
+
 
 import InRackFireSystem from "../../assets/In-Rack Fire System.webp";
 import TotalFlooding from "../../assets/Total Flooding .webp";
@@ -27,7 +31,7 @@ import JamProteksi from "../../assets/24jamproteksi (2).webp";
 import MinimListrik from "../../assets/minim listrik (2).webp";
 ---
 
-<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta}>
+<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta} keywordsmeta={keywordsmeta}>
   <Heropagetitle pagetitle={pagetitle} />
   <section class="py-16 bg-gray-100">
     <div class="container mx-auto px-6 text-center">

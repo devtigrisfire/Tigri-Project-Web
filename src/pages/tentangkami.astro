@@ -3,18 +3,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Heropagetitle from "../components/heropagetitle.astro";
 import { Image } from "astro:assets";
 
-
 const {
-  titlemeta = "Layanan Proteksi Kebakaran Tangguh-Tentang Kami",
-  descriptionmeta = "Perlindungan Terbaik Untuk Masa Depan Aset Berharga Anda",
-  pagetitle = "Tentang Kami",
+ pagetitle = "Tentang Kami",
   pagesubtitle = "Kami berkomitmen untuk menjaga keselamatan Anda dengan teknologi mutakhir dan tim ahli yang berdedikasi tinggi.",
 } = Astro.props;
+const titlemeta = "Tentang Kami | Ahli Proteksi Kebakaran dan Pemadam di Indonesia - Tigrisfire";
+const descriptionmeta = "Tigrisfire adalah ahli proteksi kebakaran di Indonesia yang berfokus pada keamanan dengan layanan berkualitas seperti refill APAR, konsultasi, dan sistem pemadam. Temukan dedikasi kami dalam melindungi bisnis dan properti Anda.";
+const keywordsmeta = "tentang kami, Tigrisfire, ahli proteksi kebakaran, layanan proteksi kebakaran Indonesia, alat pemadam, refill APAR, sistem kebakaran, konsultasi kebakaran, perlindungan bisnis, peralatan pemadam, instalasi pemadam";
+
 
 import lebihdari100klient from "../assets/lebihdari100klient.webp";
 ---
 
-<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta}>
+<BaseLayout
+  titlemeta={titlemeta}
+  descriptionmeta={descriptionmeta}
+  keywordsmeta={keywordsmeta}>
   <Heropagetitle pagetitle={pagetitle} pagesubtitle={pagesubtitle} />
 
   <section class="relative py-16 bg-gray-50">

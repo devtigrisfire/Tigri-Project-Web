@@ -3,19 +3,24 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Heropagetitle from "../../components/heropagetitle.astro";
 
 const {
-  titlemeta = "Fire Sprinkler",
-  descriptionmeta = "Produk Berkulitas Fire Sprinkler Kami",
   pagetitle = "Fire Sprinkler",
   pagesubtitle = "Dirancang untuk beroperasi secara otomatis pada suhu tertentu, alat pemadam api ini selalu siaga, memberikan perlindungan yang andal kapan pun diperlukan",
 } = Astro.props;
+const titlemeta =
+  "Fire Sprinkler Terbaik di Indonesia | Sistem Keamanan Kebakaran - Tigrisfire";
+const descriptionmeta =
+  "Tigrisfire menyediakan fire sprinkler berkualitas tinggi untuk keamanan kebakaran optimal. Lindungi properti Anda dengan sistem fire sprinkler otomatis yang efektif dan andal. Hubungi kami untuk solusi terbaik!";
+const keywordsmeta =
+  "fire sprinkler, sistem fire sprinkler, pemasangan fire sprinkler, proteksi kebakaran, sprinkler otomatis, sistem pemadam kebakaran, Tigrisfire Indonesia, keamanan kebakaran";
 ---
 
-<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta}>
-  <Heropagetitle pagetitle={pagetitle} pagesubtitle={pagesubtitle}/>
+<BaseLayout
+  titlemeta={titlemeta}
+  descriptionmeta={descriptionmeta}
+  keywordsmeta={keywordsmeta}>
+  <Heropagetitle pagetitle={pagetitle} pagesubtitle={pagesubtitle} />
 
-
-  <section
-    class="text-gray-600 body-font bg-blue-500 bg-opacity-25">
+  <section class="text-gray-600 body-font bg-blue-500 bg-opacity-25">
     <div
       class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
       <div

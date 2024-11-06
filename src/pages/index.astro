@@ -4,11 +4,14 @@ import Logopartner from "../components/logopartner.astro";
 import Keunggulan from "../../src/components/keunggulan.astro";
 import { Image } from "astro:assets";
 
-
 // Title dan description untuk meta
-const titlemeta = "Lindungi Semuanya dari Api seperti Melindungi Rumahmu";
+const titlemeta =
+  "Proteksi Kebakaran Terlengkap di Indonesia | Tigrisfire - Alat Pemadam & Sistem Keamanan";
 const descriptionmeta =
-  "Perlindungan Terbaik Untuk Masa Depan Aset Berharga Anda";
+  "Tigrisfire menyediakan solusi proteksi kebakaran terlengkap di Indonesia. Dari alat pemadam berkualitas hingga sistem fire suppression dan inspeksi APAR gratis. Lindungi aset Anda dengan layanan kami!";
+const keywordsmeta =
+  "proteksi kebakaran, fire suppression system, alat pemadam kebakaran, inspeksi APAR gratis, Tigrisfire Indonesia, layanan pemadam kebakaran, fire sprinkler, peralatan proteksi kebakaran, konsultasi keamanan kebakaran";
+
 import product2jet from "../assets/cctvrobot.webp";
 import product1robot from "../assets/robotfire.webp";
 import certificationImageUrl from "../assets/Standard-1-2048x712.webp";
@@ -25,7 +28,10 @@ import fireSprinklerImage from "../assets/hmarketproduct/3.firesprinkler.webp";
 import firepump from "../assets/hmarketproduct/4.fire pump (1).webp";
 ---
 
-<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta}>
+<BaseLayout
+  titlemeta={titlemeta}
+  descriptionmeta={descriptionmeta}
+  keywordsmeta={keywordsmeta}>
   <section
     class="relative bg-gradient-to-r from-blue-600 to-blue-900 text-white py-16 lg:py-24 lg:px-24">
     <div
@@ -45,7 +51,7 @@ import firepump from "../assets/hmarketproduct/4.fire pump (1).webp";
         </p>
         <div class="flex justify-center animate-fade-in-up-delay-long">
           <a
-            href="https://app.tigrisfire.com/form-penawaran-tigrisfire/"
+            href="https://wa.me/6281382529368?text=Hallo%20Tigrisfire,%20Saya%20Mau%20Konsultasinya"
             target="_blank"
             class="ml-4 inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-gray-800 bg-white hover:bg-gray-200 rounded-lg shadow-md transition-all duration-300 ease-in-out focus:outline-none">
             Konsultasi Sekarang
@@ -54,16 +60,16 @@ import firepump from "../assets/hmarketproduct/4.fire pump (1).webp";
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 moving-image">
         <Image
-        src={herotigris}
-        alt="Tigris Banner Person"
-        class="w-full "
-        width={600}
-        height={600}
-        format="webp"
-        quality={85}
-        loading="lazy"
-        sizes="(max-width: 600px) 500px"
-      />
+          src={herotigris}
+          alt="Tigris Banner Person"
+          class="w-full"
+          width={600}
+          height={600}
+          format="webp"
+          quality={85}
+          loading="lazy"
+          sizes="(max-width: 600px) 500px"
+        />
       </div>
     </div>
 
@@ -151,9 +157,7 @@ import firepump from "../assets/hmarketproduct/4.fire pump (1).webp";
             ></path>
           </svg>
         </div>
-        <p class="text-xl font-semibold text-gray-800 text-center">
-          Konsultan
-      </p>
+        <p class="text-xl font-semibold text-gray-800 text-center">Konsultan</p>
         <p class="text-sm text-gray-900 text-center mt-3">
           Dengan keunggulan perencanaan yang sistematis dan mengedepankan
           efisiensi.
@@ -179,9 +183,7 @@ import firepump from "../assets/hmarketproduct/4.fire pump (1).webp";
             ></path>
           </svg>
         </div>
-        <p class="text-xl font-semibold text-gray-800 text-center">
-          Training
-        </p>
+        <p class="text-xl font-semibold text-gray-800 text-center">Training</p>
         <p class="text-sm text-gray-600 text-center mt-3">
           Pembekalan dasar pemadam kebakaran oleh trainer berpengalaman.
         </p>
@@ -570,14 +572,14 @@ import firepump from "../assets/hmarketproduct/4.fire pump (1).webp";
           class="relative bg-white shadow-xl overflow-hidden group rounded-lg">
           <figure class="h-56 w-full rounded-lg overflow-hidden">
             <Image
-            src={firepump}
-            alt="Fire Sprinkler"
-            width={800}
-            height={550}
-            format="webp"
-            quality={85}
-            class="w-full h-full object-cover"
-          />
+              src={firepump}
+              alt="Fire Sprinkler"
+              width={800}
+              height={550}
+              format="webp"
+              quality={85}
+              class="w-full h-full object-cover"
+            />
           </figure>
           <div
             class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg p-4">
@@ -620,7 +622,7 @@ import firepump from "../assets/hmarketproduct/4.fire pump (1).webp";
   <section class="text-gray-900 bg-white py-16 px-2">
     <div class="container mx-auto">
       <!-- Section Header -->
-      <div class="text-center mb-12 ">
+      <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800">Klien Terpercaya Kami</h2>
         <p class="mt-4 text-gray-600 md:px-32 px-1">
           Kami bangga telah bekerja sama dengan berbagai perusahaan terkemuka
@@ -665,20 +667,20 @@ import firepump from "../assets/hmarketproduct/4.fire pump (1).webp";
       </div>
 
       <!-- Sertifikasi Gambar -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 p-4">
+      <div class="grid grid-cols-1 sm:grid-cols-3 ">
         <!-- Sertifikat 1 -->
         <div class="flex justify-center">
           <Image
             src={sertifikat}
             alt="Sertifikat 1"
-            class="max-w-full h-auto "
+            class="max-w-full h-auto"
             loading="lazy"
             width={2048}
             height={712}
             format="webp"
           />
         </div>
-      
+
         <!-- Sertifikat 2 -->
         <div class="flex justify-center">
           <Image
@@ -691,13 +693,13 @@ import firepump from "../assets/hmarketproduct/4.fire pump (1).webp";
             format="webp"
           />
         </div>
-      
+
         <!-- Sertifikat 3 -->
         <div class="flex justify-center">
           <Image
             src={sertifikat3}
             alt="Sertifikat 3"
-            class="max-w-full h-auto "
+            class="max-w-full h-auto"
             loading="lazy"
             width={2048}
             height={712}
@@ -716,8 +718,6 @@ import firepump from "../assets/hmarketproduct/4.fire pump (1).webp";
           format="webp"
         />
       </div>
-
-    
     </div>
   </section>
 </BaseLayout>

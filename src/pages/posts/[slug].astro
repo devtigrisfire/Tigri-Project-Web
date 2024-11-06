@@ -58,9 +58,18 @@ const relatedPosts = relatedPostsEntries.items.map((item) => {
 });
 
 
+// Ambil data SEO
+const titlemeta = post.metatitle || post.title; // Gunakan judul post jika metatitle kosong
+const descriptionmeta = post.metadeskripsi || post.description;
+const keywordsmeta = post.metakeywords || "default, keywords";
 ---
 
-<BaseLayout>
+<BaseLayout 
+  titlemeta={titlemeta} 
+  descriptionmeta={descriptionmeta} 
+  keywordsmeta={keywordsmeta} 
+  imagemeta={post['image']['fields']['file']['url']}
+>
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
     <!-- Bagian Header -->
     <time class="block text-center text-gray-500 text-sm">

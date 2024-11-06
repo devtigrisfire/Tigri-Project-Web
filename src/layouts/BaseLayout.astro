@@ -5,16 +5,20 @@ import "../styles/slider.css";
 import Navbar from "../components/navbar.astro";
 import Footer from "../components/Footer.astro";
 import Wangambang from "../components/wangambang.astro";
+import { Schema } from "astro-seo-schema";
 
 // Mengambil props titlemeta dan descriptionmeta dari halaman
 const {
-  titlemeta = "LAYANAN PROTEKSI KEBAKARAN - Beranda Tigrisfire",
-  descriptionmeta = "AMANKAN ASSET BERHARGAMU DI MASA DEPAN DENGAN KAMI AHLINYA.",
+  titlemeta = "Layanan Proteksi Kebakaran Terpercaya | Alat Pemadam & Konsultasi Tigrisfire",
+  descriptionmeta = "Tigrisfire menyediakan layanan proteksi kebakaran lengkap: refill APAR, konsultasi ahli, dan perlindungan bisnis Anda. Cegah risiko kebakaran, hubungi kami hari ini!",
   imagemeta = "/favicon.png", // Set default image jika tidak ada gambar
+  keywordsmeta = "alat pemadam,tigris,isi ulang apar,maintenance apar,kebakaran,sistem kebakaran,alat pemadam kebakaran, robot pemadam, air jet pemadam", // Default keywords jika tidak ada keywords dinamis
 } = Astro.props;
 
 const siteURL = new URL("https://tigrisfire.com/"); // Ganti dengan URL situs Anda
-const imageURL = new URL(imagemeta, siteURL); // Properti gambar OpenGraph menggunakan URL yang valid
+const imageURL = imagemeta.startsWith("http")
+  ? imagemeta
+  : new URL(imagemeta, siteURL); // Validasi URL gambar dinamis
 const twitterHandle = "@tigrisfire"; // Ganti dengan username Twitter Anda
 ---
 
@@ -22,6 +26,42 @@ const twitterHandle = "@tigrisfire"; // Ganti dengan username Twitter Anda
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content={imageURL.href} />
+    <meta name="twitter:image" content={imageURL.href} />
+
+    <Schema
+      item={{
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "Tigrisfire - Penyedia Segala Alat Pemadam Kebakaran",
+        description:
+          "Layanan proteksi kebakaran yang andal dan berpengalaman di bidang alat pemadam. Tigrisfire menyediakan konsultasi dan solusi untuk perlindungan bisnis dari risiko kebakaran.",
+        url: "https://tigrisfire.com",
+        telephone: "+62-813-8252-9368",
+        image: "https://tigrisfire.com/favicon.png",
+        logo: "https://tigrisfire.com/favicon.png",
+        priceRange: "IDR",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Jl. Tigris No 7.8.9 Kp Pintu, Babelan Kota",
+          addressLocality: "Bekasi",
+          addressRegion: "Jawa Barat",
+          postalCode: "17510",
+          addressCountry: "ID",
+        },
+        sameAs: [
+          "https://www.facebook.com/groups/tigrisfire/",
+          "https://www.instagram.com/tigrisfire",
+        ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+62-813-8252-9368",
+          contactType: "Customer Service",
+          areaServed: "ID",
+          availableLanguage: ["Indonesian", "English"],
+        },
+      }}
+    />
 
     <!-- SEO optimization menggunakan astro-seo -->
     <SEO
@@ -53,24 +93,25 @@ const twitterHandle = "@tigrisfire"; // Ganti dengan username Twitter Anda
         // Menambahkan meta tambahan
         meta: [
           { name: "author", content: "Tigrisfire" },
-          {
-            name: "keywords",
-            content:
-              "Tigrisfire, tigris, pt. tigris, refill apar, pemadam api, alat pemadam ",
-          },
+          { name: "keywords", content: keywordsmeta }, // Menggunakan keywords dinamis
           { name: "robots", content: "index, follow" }, // Memberikan izin mesin pencari untuk mengindeks halaman
           { name: "twitter:site", content: twitterHandle },
           { name: "twitter:image", content: new URL(imageURL, siteURL).href }, // Menggunakan URL objek yang valid untuk Twitter
         ],
       }}
     />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700&display=swap"
       rel="stylesheet"
     />
-<!--Sitemap -->
+    <!--Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- Google tag (gtag.js) -->
@@ -115,7 +156,7 @@ const twitterHandle = "@tigrisfire"; // Ganti dengan username Twitter Anda
             </p>
           </div>
           <a
-            href="https://app.tigrisfire.com/form-penawaran-tigrisfire/"
+            href="https://wa.me/6281382529368?text=Hallo%20Tigrisfire,%20Saya%20Mau%20Konsultasinya"
             class="relative text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 shadow-md hover:shadow-xl transition-all duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 focus:outline-none dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-offset-2">
             Konsultasi Sekarang
           </a>

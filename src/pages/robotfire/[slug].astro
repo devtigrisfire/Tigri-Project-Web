@@ -36,14 +36,18 @@ const galleryImages = Array.isArray(product.image)
   : [product.image];
 
 const mainImageUrl =
-  galleryImages[0]?.fields?.file?.url || "/logo rumahapi.webp"; // Gambar utama
+  galleryImages[0]?.fields?.file?.url || "/favicon.png"; // Gambar utama
+// Ambil data SEO dari produk
+const titlemeta = product.metatitle || "Robot Firefighting - Tigrisfire";
+const descriptionmeta = product.metadeskripsi || "Masa Depan Alat Pemadam Kebakaran";
+const keywordsmeta = product.metakeywords || "firefighting, robot, keamanan, Tigrisfire";
 
-const titlemeta = "Robot Firefighting - Tigrisfire";
-const descriptionmeta = "Masa Depan Alat Pemadam Kebakaran";
-const gambarmeta = "{mainImageUrl}"; // Gambar khusus untuk halaman ini
 ---
 
-<BaseLayout titlemeta={titlemeta} descriptionmeta={descriptionmeta} gambarmeta={gambarmeta}>
+<BaseLayout titlemeta={titlemeta}
+descriptionmeta={descriptionmeta}
+keywordsmeta={keywordsmeta}
+imagemeta={mainImageUrl}>
   <!-- Container utama -->
   <div class="bg-gray-100 py-12">
     <div class="container mx-auto px-4 md:px-8">
