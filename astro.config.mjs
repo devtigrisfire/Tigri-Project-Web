@@ -5,6 +5,8 @@ import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
 import robotsTxt from "astro-robots-txt";
 
+import vercel from "@astrojs/vercel/serverless";
+
 //https://astro.build/config
 export default defineConfig({
   image: {
@@ -16,7 +18,11 @@ export default defineConfig({
       },
     },
   },
-  site: "https://tigrisfire.com/", // Tambahkan URL situs di sini
+
+  // Tambahkan URL situs di sini
+  site: "https://tigrisfire.com/",
+
+  // Konfigurasi lain
   integrations: [sitemap(), partytown({
     config: {
       forward: ["dataLayer.push"],
@@ -24,5 +30,7 @@ export default defineConfig({
   }), react({
     experimentalReactChildren: true,
   }), robotsTxt()],
-  // Konfigurasi lain
+
+  output: "server",
+  adapter: vercel()
 });

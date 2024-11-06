@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tigrisfire.com/sitemap-index.xml
